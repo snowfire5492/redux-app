@@ -1,5 +1,5 @@
 const redux = require('redux');
-const createStone = redux.createStore;
+const createStore = redux.createStore;
 
 const initialState = {
     counter: 0
