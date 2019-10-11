@@ -1,5 +1,6 @@
-const intialState = {
-    counter: 0
+const initialState = {
+    counter: 0,
+    results: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -27,8 +28,15 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 counter: state.counter - action.val
             }
+        case 'STORE_RESULT':
+            return {
+                ...state,
+                results: state.results.concat({
+                    id: new Date(), value: state.counter
+                })
+               
+            }
     }
-    
     return state;
 };
 
